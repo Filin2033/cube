@@ -1,30 +1,39 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+<div id="bind-attribute">
+  <div class="menu">
+    <router-link to="/">Hello</router-link>
+    <router-link to="/todo">ToDo</router-link>
+    <router-view/>
+  </div>
+  <div>
+    <span v-bind:title="message">
+      Наведи на меня курсор на пару секунд, чтобы
+      увидеть динамически связанное значение title!
+    </span>
+  </div>
+  
+  <hr>
+</div>
 </template>
 
+<script>
+import TodoList from './components/TodoList.vue';
+export default {
+  data() {
+    return {
+      message: 'Страница загружена ' + new Date().toLocaleString()
+    }
+  },
+  components: {
+    TodoList
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>
