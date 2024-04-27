@@ -1,8 +1,6 @@
 <template>
 <div id="bind-attribute">
   <div class="menu">
-    <router-link to="/">Hello</router-link>
-    <router-link to="/todo">ToDo</router-link>
     <router-view/>
   </div>
   <div>
@@ -11,7 +9,10 @@
       увидеть динамически связанное значение title!
     </span>
   </div>
-  
+  <div>
+    <router-link to="/">Hello</router-link>
+    <router-link to="/todo">ToDo</router-link>
+  </div>
   <hr>
 </div>
 </template>
